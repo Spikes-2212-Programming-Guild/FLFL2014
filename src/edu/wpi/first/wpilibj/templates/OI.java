@@ -3,6 +3,10 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.*;
+import edu.wpi.first.wpilibj.templates.commands.drive.DriveRotate;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.templates.commands.placeGentely.CloseDoor;
 import edu.wpi.first.wpilibj.templates.commands.placeGentely.ElevatorDown;
@@ -14,6 +18,12 @@ import edu.wpi.first.wpilibj.templates.commands.placeGentely.OpenDoor;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+
+    private static class joy {
+
+        public joy() {
+        }
+    }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -57,5 +67,19 @@ public class OI {
         openDoor.whenPressed(new OpenDoor());
         closeDoor.whenPressed(new CloseDoor());            
 }
+    Joystick joy= new Joystick(1);
+    Button trigger = new JoystickButton(joy, 1);
+    
+    public OI(){
+        trigger.whileHeld(new DriveRotate()); 
+    }
+    
+    public double getX() {
+        return joy.getX();
+    }
+    public double getY() {
+        return joy.getY();
+    }
+    
 }
 
