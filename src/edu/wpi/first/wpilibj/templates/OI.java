@@ -52,10 +52,6 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
     Joystick joy= new Joystick(1);
     Button trigger = new JoystickButton(joy, 1);
-    Button doorOpen= new JoystickButton(joy, 2);
-    Button doorClose= new JoystickButton(joy, 3);
-    Button pistonUp= new JoystickButton(joy, 4);
-    Button pistonDown= new JoystickButton(joy, 5);
     
     public OI(){
         trigger.whileHeld(new DriveRotate()); 
