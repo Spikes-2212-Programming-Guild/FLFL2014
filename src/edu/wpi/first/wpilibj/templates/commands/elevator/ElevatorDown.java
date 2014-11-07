@@ -3,38 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wpi.first.wpilibj.templates.commands.placeGentely;
+package edu.wpi.first.wpilibj.templates.commands.elevator;
 
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.subsystems.placeGentely.Door;
 
 /**
  *
  * @author eyal
  */
-public class CloseDoor extends CommandBase {
-    
-    public CloseDoor(){
-        requires(door);
-    }
+public class ElevatorDown extends CommandBase{
 
+    public ElevatorDown(){
+        requires(elevator);
+    }
+    
     protected void initialize() {
     }
 
     protected void execute() {
-        door.closeDoor();
-    }
-
-    protected boolean isFinished() {
-        return Door.doorBottom.get();
+        elevator.goDown();
     }
 
     protected void end() {
-        door.stop();
+        elevator.stop();
     }
-
-    protected void interrupted() {
+    
+    public void interrupted(){
         end();
     }
+      
+    public boolean isFinished() {
+       return elevator.bottom.get();
+    } 
     
 }
