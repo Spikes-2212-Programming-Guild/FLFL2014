@@ -7,7 +7,6 @@ package edu.wpi.first.wpilibj.templates.commands.elevator;
 
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.subsystems.placeGentely.Door;
 
 /**
  *
@@ -27,7 +26,7 @@ public class OpenDoor extends CommandBase{
     }
 
     protected boolean isFinished() {
-        return Door.doorTop.get();
+        return door.doorTop.get();
     }
 
     protected void end() {

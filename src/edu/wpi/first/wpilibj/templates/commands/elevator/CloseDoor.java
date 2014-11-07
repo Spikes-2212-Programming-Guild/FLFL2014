@@ -6,7 +6,6 @@
 package edu.wpi.first.wpilibj.templates.commands.elevator;
 
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.subsystems.placeGentely.Door;
 
 /**
  *
@@ -26,7 +25,7 @@ public class CloseDoor extends CommandBase {
     }
 
     protected boolean isFinished() {
-        return Door.doorBottom.get();
+        return door.doorBottom.get();
     }
 
     protected void end() {
