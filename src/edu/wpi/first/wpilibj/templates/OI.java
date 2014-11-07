@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.templates.commands.*;
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveRotate;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.templates.commands.placeGentely.CloseDoor;
-import edu.wpi.first.wpilibj.templates.commands.placeGentely.ElevatorDown;
-import edu.wpi.first.wpilibj.templates.commands.placeGentely.ElevatorUp;
-import edu.wpi.first.wpilibj.templates.commands.placeGentely.OpenDoor;
+import edu.wpi.first.wpilibj.templates.commands.elevator.CloseDoor;
+import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorDown;
+import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorUp;
+import edu.wpi.first.wpilibj.templates.commands.elevator.OpenDoor;
 
 /**
  * This class is the glue that binds the controls on the physical operator
