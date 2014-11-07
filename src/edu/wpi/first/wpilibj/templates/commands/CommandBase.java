@@ -7,9 +7,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.RobotMap;
-import edu.wpi.first.wpilibj.templates.subsystems.ExampleSubsystem;
-import edu.wpi.first.wpilibj.templates.subsystems.placeGentely.Door;
-import edu.wpi.first.wpilibj.templates.subsystems.placeGentely.Elevator;
+import edu.wpi.first.wpilibj.templates.subsystems.Door;
+import edu.wpi.first.wpilibj.templates.subsystems.Elevator;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -24,10 +23,8 @@ public abstract class CommandBase extends Command {
     public static OI oi;
     public static DriveTrain dt = new DriveTrain(RobotMap.LEFT_TALON_1, RobotMap.LEFT_TALON_2, RobotMap.RIGHT_TALON_1, RobotMap.RIGHT_TALON_2);
     // Create a single static instance of all of your subsystems
-    public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static Door door = new Door(RobotMap.doorRelayPort, RobotMap.doorTopPort, RobotMap.doorBottomPort);
     public static Elevator elevator = new Elevator(RobotMap.leftWheelPort, RobotMap.rightWheelPort);
-
 
     // Create a single static instance of all of your subsystems
     public static void init() {
