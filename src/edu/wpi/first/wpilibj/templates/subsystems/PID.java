@@ -6,6 +6,7 @@
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
  *
@@ -45,7 +46,7 @@ public class PID extends Subsystem {
     }
 
     public boolean hasArrived() {
-        return error == 0;
+        return -RobotMap.DRIVE_PID_TOLERANCE<error&&error<RobotMap.DRIVE_PID_TOLERANCE;
     }
 
     public void initDefaultCommand() {
