@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.subsystems.Door;
 import edu.wpi.first.wpilibj.templates.subsystems.Elevator;
+import edu.wpi.first.wpilibj.templates.subsystems.PID;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -21,8 +22,8 @@ import edu.wpi.first.wpilibj.templates.subsystems.Elevator;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    public static DriveTrain dt = new DriveTrain(RobotMap.LEFT_TALON_1, RobotMap.LEFT_TALON_2, RobotMap.RIGHT_TALON_1, RobotMap.RIGHT_TALON_2);
-    // Create a single static instance of all of your subsystems
+    public static DriveTrain driveTrain = new DriveTrain(RobotMap.LEFT_TALON_1, RobotMap.LEFT_TALON_2, RobotMap.RIGHT_TALON_1, RobotMap.RIGHT_TALON_2,RobotMap.DRIVE_ENCODER_1,RobotMap.DRIVE_ENCODER_2,RobotMap.DESTINATION);
+    public static PID drivePID=new PID(RobotMap.DESTINATION, RobotMap.DRIVER_KP, RobotMap.DRIVER_KI, RobotMap.DRIVER_KD, RobotMap.DRIVER_DT, driveTrain, driveTrain);
     public static Door door = new Door(RobotMap.doorRelayPort, RobotMap.doorTopPort, RobotMap.doorBottomPort);
     public static Elevator elevator = new Elevator(RobotMap.leftWheelPort, RobotMap.rightWheelPort);
 
