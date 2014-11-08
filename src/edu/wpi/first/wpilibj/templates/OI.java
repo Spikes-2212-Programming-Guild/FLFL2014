@@ -1,8 +1,13 @@
 
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.placeGentely.CloseDoor;
+import edu.wpi.first.wpilibj.templates.commands.placeGentely.ElevatorDown;
+import edu.wpi.first.wpilibj.templates.commands.placeGentely.ElevatorUp;
+import edu.wpi.first.wpilibj.templates.commands.placeGentely.OpenDoor;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -40,5 +45,17 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    Joystick joy2 = new Joystick(RobotMap.joystick2Port);    
+    Button elUp = new JoystickButton(joy2,2);
+    Button elDown = new JoystickButton(joy2,3);
+    Button openDoor = new JoystickButton(joy2, 4);
+    Button closeDoor = new JoystickButton(joy2, 5);
+    
+    public OI() {
+        elUp.whenPressed(new ElevatorUp());
+        elDown.whenPressed(new ElevatorDown());
+        openDoor.whenPressed(new OpenDoor());
+        closeDoor.whenPressed(new CloseDoor());            
+}
 }
 
