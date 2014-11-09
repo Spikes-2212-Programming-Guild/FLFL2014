@@ -6,6 +6,7 @@
 package edu.wpi.first.wpilibj.templates.commands.elevator;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
  *
@@ -17,11 +18,12 @@ public class ScoreTubes extends CommandGroup {
         addSequential(new ElevatorUp());
         addSequential(new OpenDoor());
         try {
-            Thread.sleep(2000);
+            Thread.sleep(RobotMap.SLEEP_BETWEEN_DOOR_OPEN_AND_CLOSE);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
         addSequential(new CloseDoor());
         addSequential(new ElevatorDown());
     }
+    
 }

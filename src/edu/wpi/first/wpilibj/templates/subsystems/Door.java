@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Door extends Subsystem {
 
-    Relay doorRelay;
-    public static DigitalInput doorTop;
-    public static DigitalInput doorBottom;
+    private Relay doorRelay;
+    private DigitalInput doorTop;
+    private DigitalInput doorBottom;
 
     public Door(Relay doorRelay, DigitalInput doorTop, DigitalInput doorBottom) {
         this.doorRelay = doorRelay;
@@ -30,22 +30,26 @@ public class Door extends Subsystem {
     }
 
     public void closeDoor() {
-        if (!doorTop.get()) {
-            doorRelay.set(Relay.Value.kForward);
-        }
+        doorRelay.set(Relay.Value.kForward);
     }
 
     public void openDoor() {
-        if (!doorBottom.get()) {
-            doorRelay.set(Relay.Value.kReverse);
-        }
+        doorRelay.set(Relay.Value.kReverse);
     }
 
     public void stop() {
         doorRelay.set(Relay.Value.kOff);
     }
 
-    protected void initDefaultCommand() {
-        stop();
+    public boolean isOpen() {
+        return doorBottom.get();
     }
+    
+    public boolean isClosed() {
+        return doorTop.get();
+    }
+    
+    protected void initDefaultCommand() {
+    }
+
 }
