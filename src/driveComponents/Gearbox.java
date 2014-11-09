@@ -9,7 +9,9 @@ import edu.wpi.first.wpilibj.*;
  * @author Developer
  */
 public class Gearbox {
-    Talon front, back;
+    
+    private Talon front, back;
+    
     public Gearbox (Talon front, Talon back){
         this.front= front;
         this.back= back;
@@ -23,5 +25,4 @@ public class Gearbox {
         back.set(speed);
     }
 
-    
 }

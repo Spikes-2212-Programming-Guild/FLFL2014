@@ -3,37 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wpi.first.wpilibj.templates.commands.elevator;
+package edu.wpi.first.wpilibj.templates.commands.drive;
 
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
- * @author eyal
+ * @author dvir42
  */
-public class OpenDoor extends CommandBase{
+public class TwoJoystickDrive extends CommandBase {
 
-    public OpenDoor(){
-        requires(door);
+    public TwoJoystickDrive() {
+        requires(driveTrain);
     }
     
     protected void initialize() {
     }
 
     protected void execute() {
-        door.openDoor();
+        driveTrain.twoJoystickDrive(oi.getLeftY(), oi.getRightY());
     }
 
     protected boolean isFinished() {
-        return door.isOpen();
+        return false;
     }
 
     protected void end() {
-        door.stop();
+        driveTrain.twoJoystickDrive(0, 0);
     }
 
     protected void interrupted() {
         end();
     }
-
+    
 }

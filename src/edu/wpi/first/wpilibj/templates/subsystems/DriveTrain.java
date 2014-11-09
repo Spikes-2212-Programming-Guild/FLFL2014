@@ -7,7 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import driveComponents.Gearbox;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.commands.drive.DriveStraight;
+import edu.wpi.first.wpilibj.templates.commands.drive.TwoJoystickDrive;
 
 /**
  *
@@ -43,7 +43,7 @@ public class DriveTrain extends Subsystem implements In, Out {
     }
 
     protected void initDefaultCommand() {
-        setDefaultCommand(new DriveStraight());
+        setDefaultCommand(new TwoJoystickDrive());
     }
 
     public double get() {

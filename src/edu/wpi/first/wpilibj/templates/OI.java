@@ -1,12 +1,7 @@
 package edu.wpi.first.wpilibj.templates;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.templates.commands.*;
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveRotate;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.drive.DriveStraight;
 import edu.wpi.first.wpilibj.templates.commands.elevator.CloseDoor;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorDown;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorUp;
@@ -16,13 +11,8 @@ import edu.wpi.first.wpilibj.templates.commands.elevator.OpenDoor;
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-public class OI {
+public class OI extends JoystickMap {
 
-    private static class joy {
-
-        public joy() {
-        }
-    }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -49,28 +39,30 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-    Joystick joy2 = new Joystick(RobotMap.joystick2Port);
-    Button elUp = new JoystickButton(joy2, 2);
-    Button elDown = new JoystickButton(joy2, 3);
-    Button openDoor = new JoystickButton(joy2, 4);
-    Button closeDoor = new JoystickButton(joy2, 5);
-    Joystick joy = new Joystick(1);
-    Button trigger = new JoystickButton(joy, 1);
-
+    
     public OI() {
-        elUp.whenPressed(new ElevatorUp());
-        elDown.whenPressed(new ElevatorDown());
-        openDoor.whenPressed(new OpenDoor());
-        closeDoor.whenPressed(new CloseDoor());
-        trigger.whileHeld(new DriveRotate());
+        ELEVATOR_UP.whenPressed(new ElevatorUp());
+        ELEVATOR_DOWN.whenPressed(new ElevatorDown());
+        DOOR_OPEN.whenPressed(new OpenDoor());
+        DOOR_CLOSE.whenPressed(new CloseDoor());
+        TANK_STRAIGHT.whileHeld(new DriveStraight());
+        TANK_ROTATE.whileHeld(new DriveRotate());
     }
 
-    public double getX() {
-        return joy.getX();
+    public double getLeftX() {
+        return driveLeft.getX();
     }
 
-    public double getY() {
-        return joy.getY();
+    public double getLeftY() {
+        return driveLeft.getY();
+    }
+    
+    public double getRightX() {
+        return driveRight.getX();
+    }
+
+    public double getRightY() {
+        return driveRight.getY();
     }
 
 }

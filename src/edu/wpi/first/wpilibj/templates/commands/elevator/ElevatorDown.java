@@ -33,7 +33,7 @@ public class ElevatorDown extends CommandBase{
     }
       
     public boolean isFinished() {
-       return elevator.bottom.get();
+       return elevator.isDown();
     } 
     
 }

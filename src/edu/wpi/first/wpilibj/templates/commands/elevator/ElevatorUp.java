@@ -33,7 +33,7 @@ public class ElevatorUp extends CommandBase{
     }
       
     public boolean isFinished() {
-       return elevator.top.get();
+       return elevator.isUp();
     } 
     
 }
