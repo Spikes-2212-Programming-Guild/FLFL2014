@@ -34,5 +34,4 @@ public class DriveStraight extends CommandBase{
     protected void initialize() {
     }
 
-    
 }

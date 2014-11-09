@@ -15,7 +15,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class JoystickMap {
     
-    
     private static final int JOYSTICK_LEFT_DRIVE_PORT = 1;
     private static final int JOYSTICK_DRIVE_RIGHT_PORT = 2;
     private static final int JOYSTICK_NAV_PORT = 3;    
