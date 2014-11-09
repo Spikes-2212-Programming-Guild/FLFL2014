@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  * @author eyal
  */
 public class Elevator extends Subsystem {
-    public DigitalInput top = new DigitalInput(RobotMap.topDIPort);
-    public DigitalInput bottom = new DigitalInput(RobotMap.bottomDIPort);    
-    Relay rightWheel, leftWheel;
+    private DigitalInput top = new DigitalInput(RobotMap.topDIPort);
+    private DigitalInput bottom = new DigitalInput(RobotMap.bottomDIPort);    
+    private Relay rightWheel, leftWheel;
     
     public Elevator(Relay leftWheel, Relay rightWheel){
         this.leftWheel=leftWheel;
@@ -29,26 +29,29 @@ public class Elevator extends Subsystem {
     }
     
     public void goUp() {
-       if(top.get()){
-            rightWheel.set(Relay.Value.kForward);
-            leftWheel.set(Relay.Value.kForward); 
-       }
+        rightWheel.set(Relay.Value.kForward);
+        leftWheel.set(Relay.Value.kForward);
     }
 
     public void goDown() {
-        if(bottom.get()){
-            rightWheel.set(Relay.Value.kReverse);
-            leftWheel.set(Relay.Value.kReverse);
-        }
+        rightWheel.set(Relay.Value.kReverse);
+        leftWheel.set(Relay.Value.kReverse);
     }
 
     protected void initDefaultCommand() {
-        stop();
     }
 
     public void stop() {
         rightWheel.set(Relay.Value.kOff);
         leftWheel.set(Relay.Value.kOff);        
+    }
+    
+    public boolean isUp() {
+        return top.get();
+    }
+    
+    public boolean isDown() {
+        return bottom.get();
     }
     
 }
