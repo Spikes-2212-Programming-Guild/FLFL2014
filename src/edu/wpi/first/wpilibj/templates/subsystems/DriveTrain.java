@@ -6,32 +6,40 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 
 import driveComponents.Gearbox;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.commands.drive.DriveStraight;
+import edu.wpi.first.wpilibj.templates.commands.drive.TwoJoystickDrive;
 
 /**
  *
  * @author Developer
  */
 public class DriveTrain extends Subsystem{
-    Gearbox left,right;
+    
+    private Gearbox left,right;
+    
     public DriveTrain (Gearbox left, Gearbox right){
         this.left= left;
         this.right= right;
     }
-    public DriveTrain(int p1, int p2, int p3, int p4) {
-        this(new Gearbox(p1, p2),new Gearbox(p3, p4));
+    
+    public DriveTrain(int frontLeftPort, int backLeftPort, int frontRightPort, int backRightPort) {
+        this(new Gearbox(frontLeftPort, backLeftPort), new Gearbox(frontRightPort, backRightPort));
     }
+    
     public void straight(double speed){
-        left.setSpeed(speed);
-        right.setSpeed(-speed);
+        twoJoystickDrive(speed, -speed);
     }
+    
     public void rotate (double speed){
-        left.setSpeed(speed);
-        right.setSpeed(speed);
+        twoJoystickDrive(speed, speed);
+    }
+    
+    public void twoJoystickDrive(double leftSpeed, double rightSpeed) {
+        left.setSpeed(leftSpeed);
+        right.setSpeed(rightSpeed);
     }
 
     protected void initDefaultCommand() {
-        setDefaultCommand(new DriveStraight());
+        setDefaultCommand(new TwoJoystickDrive());
     }
     
 }
