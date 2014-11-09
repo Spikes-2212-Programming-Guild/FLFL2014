@@ -10,6 +10,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
  * @author AtidSpikes
  */
 public interface In {
+    
     public double get();
     
 }

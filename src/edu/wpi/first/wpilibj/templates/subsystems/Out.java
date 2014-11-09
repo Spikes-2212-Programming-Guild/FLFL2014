@@ -10,5 +10,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
  * @author AtidSpikes
  */
 public interface Out {
-    public void set(double s);
+    
+    public void set(double output);
+
 }
