@@ -16,7 +16,7 @@ public class DriveRotate extends CommandBase{
        requires(driveTrain);
     }
     public void execute(){
-        driveTrain.rotate(oi.getX());
+        driveTrain.rotate(oi.getRightX());
     }
     
     protected boolean isFinished() {

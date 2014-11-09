@@ -5,8 +5,6 @@
 package edu.wpi.first.wpilibj.templates.commands.drive;
 
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
-
 
 /**
  *
@@ -18,7 +16,7 @@ public class DriveStraight extends CommandBase{
        requires(driveTrain);
     }
     public void execute(){
-        driveTrain.straight(oi.getY());
+        driveTrain.straight(oi.getRightY());
     }
     
     protected boolean isFinished() {

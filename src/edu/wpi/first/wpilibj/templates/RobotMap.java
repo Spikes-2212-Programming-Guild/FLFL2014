@@ -23,7 +23,6 @@ public class RobotMap {
     public static final int FRONT_RIGHT_TALON = 0;
     public static final int BACK_RIGHT_TALON = 0;
     
-    public static final int JOYSTICK_2_PORT=2;        
     public static final int ELEVATOR_TOP_DI_PORT=7;
     public static final int ELEVATOR_BOTTOM_DI_PORT=8;
     public static final int ELEVATOR_LEFT_WHEEL_PORT=5;
