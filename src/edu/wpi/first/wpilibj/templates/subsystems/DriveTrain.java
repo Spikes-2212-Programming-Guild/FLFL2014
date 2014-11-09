@@ -32,6 +32,12 @@ public class DriveTrain extends Subsystem implements In, Out {
         this(new Gearbox(left1, left2), new Gearbox(right1, right2), new Encoder(encoder1, encoder2), wheelDiameter);
     }
 
+
+    public void twoJoystickDrive(double leftSpeed, double rightSpeed) {
+        left.setSpeed(leftSpeed);
+        right.setSpeed(rightSpeed);
+    }
+
     public void straight(double speed) {
         left.setSpeed(speed);
         right.setSpeed(-speed);
@@ -47,7 +53,7 @@ public class DriveTrain extends Subsystem implements In, Out {
     }
 
     public double get() {
-        return destination-(encoder.get()*(Math.PI*wheelDiameter));
+        return destination - (encoder.get() * (Math.PI * wheelDiameter));
     }
 
     public void set(double s) {
