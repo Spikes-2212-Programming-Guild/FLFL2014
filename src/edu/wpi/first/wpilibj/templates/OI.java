@@ -18,11 +18,6 @@ import edu.wpi.first.wpilibj.templates.commands.elevator.OpenDoor;
  */
 public class OI {
 
-    private static class joy {
-
-        public joy() {
-        }
-    }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -49,7 +44,7 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-    Joystick joy2 = new Joystick(RobotMap.joystick2Port);
+    Joystick joy2 = new Joystick(RobotMap.JOYSTICK_2_PORT);
     Button elUp = new JoystickButton(joy2, 2);
     Button elDown = new JoystickButton(joy2, 3);
     Button openDoor = new JoystickButton(joy2, 4);

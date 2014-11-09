@@ -13,10 +13,10 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 public class DriveRotate extends CommandBase{
     
     public DriveRotate (){
-       requires(dt);
+       requires(driveTrain);
     }
     public void execute(){
-        dt.rotate(oi.getX());
+        driveTrain.rotate(oi.getX());
     }
     
     protected boolean isFinished() {
@@ -24,7 +24,7 @@ public class DriveRotate extends CommandBase{
     }
 
     protected void end() {
-        dt.rotate(0);
+        driveTrain.rotate(0);
     }
 
     protected void interrupted() {

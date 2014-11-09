@@ -15,10 +15,10 @@ import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
 public class DriveStraight extends CommandBase{
     
     public DriveStraight (){
-       requires(dt);
+       requires(driveTrain);
     }
     public void execute(){
-        dt.straight(oi.getY());
+        driveTrain.straight(oi.getY());
     }
     
     protected boolean isFinished() {
@@ -26,7 +26,7 @@ public class DriveStraight extends CommandBase{
     }
 
     protected void end() {
-        dt.straight(0);
+        driveTrain.straight(0);
     }
 
     protected void interrupted() {

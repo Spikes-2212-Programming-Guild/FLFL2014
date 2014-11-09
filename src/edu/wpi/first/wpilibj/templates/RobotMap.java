@@ -8,10 +8,6 @@ package edu.wpi.first.wpilibj.templates;
  */
 public class RobotMap {
 
-    public static final int LEFT_TALON_1 = 0;
-    public static final int LEFT_TALON_2 = 0;
-    public static final int RIGHT_TALON_1 = 0;
-    public static final int RIGHT_TALON_2 = 0;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static final int leftMotor = 1;
@@ -21,12 +17,19 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
-    public static final int joystick2Port=2;        
-    public static final int topDIPort=7;
-    public static final int bottomDIPort=8;
-    public static final int leftWheelPort=5;
-    public static final int rightWheelPort=6;
-    public static final int doorRelayPort=9;
-    public static final int doorTopPort=10;
-    public static final int doorBottomPort=11;    
+    
+    public static final int FRONT_LEFT_TALON = 0;
+    public static final int BACK_LEFT_TALON = 0;
+    public static final int FRONT_RIGHT_TALON = 0;
+    public static final int BACK_RIGHT_TALON = 0;
+    
+    public static final int JOYSTICK_2_PORT=2;        
+    public static final int ELEVATOR_TOP_DI_PORT=7;
+    public static final int ELEVATOR_BOTTOM_DI_PORT=8;
+    public static final int ELEVATOR_LEFT_WHEEL_PORT=5;
+    public static final int ELEVATOR_RIGHT_WHEEL_PORT=6;
+    public static final int DOOR_RELAY_PORT=9;
+    public static final int DOOR_TOP_DI_PORT=10;
+    public static final int DOOR_BOTTOM_DI_PORT=11;
+    
 }

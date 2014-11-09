@@ -21,12 +21,12 @@ import edu.wpi.first.wpilibj.templates.subsystems.Elevator;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    public static DriveTrain dt = new DriveTrain(RobotMap.LEFT_TALON_1, RobotMap.LEFT_TALON_2, RobotMap.RIGHT_TALON_1, RobotMap.RIGHT_TALON_2);
-    // Create a single static instance of all of your subsystems
-    public static Door door = new Door(RobotMap.doorRelayPort, RobotMap.doorTopPort, RobotMap.doorBottomPort);
-    public static Elevator elevator = new Elevator(RobotMap.leftWheelPort, RobotMap.rightWheelPort);
+    
+    // Create a single static instance of all of your subsystems    
+    public static DriveTrain driveTrain = new DriveTrain(RobotMap.FRONT_LEFT_TALON, RobotMap.BACK_LEFT_TALON, RobotMap.FRONT_RIGHT_TALON, RobotMap.BACK_RIGHT_TALON);
+    public static Door door = new Door(RobotMap.DOOR_RELAY_PORT, RobotMap.DOOR_TOP_DI_PORT, RobotMap.DOOR_BOTTOM_DI_PORT);
+    public static Elevator elevator = new Elevator(RobotMap.ELEVATOR_LEFT_WHEEL_PORT, RobotMap.ELEVATOR_RIGHT_WHEEL_PORT);
 
-    // Create a single static instance of all of your subsystems
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from
@@ -40,11 +40,10 @@ public abstract class CommandBase extends Command {
 
     public CommandBase(String name) {
         super(name);
-
     }
 
     public CommandBase() {
         super();
-
     }
+    
 }
