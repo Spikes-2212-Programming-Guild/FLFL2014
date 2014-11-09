@@ -17,7 +17,6 @@ public class DriveTrain extends Subsystem implements In, Out {
 
     private Gearbox left, right;
     private Encoder encoder;
-    private double destination;
     private double wheelDiameter;
 
     public DriveTrain(Gearbox left, Gearbox right, Encoder encoder, double wheelDiameter) {
@@ -28,8 +27,8 @@ public class DriveTrain extends Subsystem implements In, Out {
         encoder.start();
     }
 
-    public DriveTrain(int left1, int left2, int right1, int right2, int encoder1, int encoder2, double wheelDiameter) {
-        this(new Gearbox(left1, left2), new Gearbox(right1, right2), new Encoder(encoder1, encoder2), wheelDiameter);
+    public DriveTrain(int frontLeftPort, int backLeftPort, int frontRightPort, int backRightPort, int encoderPort1, int encoderPort2, double wheelDiameter) {
+        this(new Gearbox(frontLeftPort, backLeftPort), new Gearbox(frontRightPort, backRightPort), new Encoder(encoderPort1, encoderPort2), wheelDiameter);
     }
 
 
@@ -53,15 +52,11 @@ public class DriveTrain extends Subsystem implements In, Out {
     }
 
     public double get() {
-        return destination - (encoder.get() * (Math.PI * wheelDiameter));
+        return encoder.get() * (Math.PI * wheelDiameter);
     }
 
-    public void set(double s) {
-        straight(s);
-    }
-
-    public void setDestination(double destination) {
-        this.destination = destination;
+    public void set(double speed) {
+        straight(speed);
     }
 
 }
