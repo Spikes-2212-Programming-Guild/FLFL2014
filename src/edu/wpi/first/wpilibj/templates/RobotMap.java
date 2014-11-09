@@ -31,4 +31,6 @@ public class RobotMap {
     public static final int DOOR_TOP_DI_PORT=10;
     public static final int DOOR_BOTTOM_DI_PORT=11;
     
+    public static final long SLEEP_BETWEEN_DOOR_OPEN_AND_CLOSE = 2000;
+    
 }
