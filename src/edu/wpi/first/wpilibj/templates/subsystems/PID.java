@@ -14,29 +14,30 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
 public class PID extends Subsystem {
 
-    private double kp, ki, kd, error, prevError, p, i, d;
-    private long dt;
-    In in;
-    Out out;
+    private final double KP, KI, KD, dest;
+    private double error, prevError, p, i, d;
+    private final long dt;
+    private final In in;
+    private final Out out;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
     public PID(double dest, double kp, double ki, double kd, long dt, In in, Out out) {
-        this.error = dest;
-        this.kp = kp;
-        this.ki = ki;
-        this.kd = kd;
+        this.error = this.dest = dest;
+        this.KP = kp;
+        this.KI = ki;
+        this.KD = kd;
         this.dt = dt;
         this.in = in;
         this.out = out;
     }
 
-    public void PIDed() {
+    public void doPID() {
         prevError = error;
-        error = in.get();
-        p = kp * error;
-        i += ki * dt * error;
-        d = (error - prevError) / dt * kd;
+        error = dest - in.get();
+        p = KP * error;
+        i += KI * dt * error;
+        d = (error - prevError) / dt * KD;
         out.set(p + i + d);
         try {
             Thread.sleep(dt);
@@ -46,11 +47,12 @@ public class PID extends Subsystem {
     }
 
     public boolean hasArrived() {
-        return -RobotMap.DRIVE_PID_TOLERANCE<error&&error<RobotMap.DRIVE_PID_TOLERANCE;
+        return Math.abs(error) < RobotMap.DRIVE_PID_TOLERANCE;
     }
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
 }

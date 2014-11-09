@@ -24,7 +24,7 @@ public class RobotMap {
     public static final int DRIVE_ENCODER_2 = 0;
     public static final double WHEEL_DIAMETER = 0;
 
-    public static final double DESTINATION = 0;
+    public static final double AUTONOMOUS_DRIVE_DESTINATION = 0;
 
     public static final int ELEVATOR_TOP_DI_PORT = 7;
     public static final int ELEVATOR_BOTTOM_DI_PORT = 8;
