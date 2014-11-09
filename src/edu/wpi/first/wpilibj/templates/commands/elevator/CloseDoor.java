@@ -25,7 +25,7 @@ public class CloseDoor extends CommandBase {
     }
 
     protected boolean isFinished() {
-        return door.doorBottom.get();
+        return door.isClosed();
     }
 
     protected void end() {

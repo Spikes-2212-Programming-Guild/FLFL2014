@@ -5,7 +5,6 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.elevator;
 
-import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -26,7 +25,7 @@ public class OpenDoor extends CommandBase{
     }
 
     protected boolean isFinished() {
-        return door.doorTop.get();
+        return door.isOpen();
     }
 
     protected void end() {
