@@ -5,6 +5,7 @@
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import driveComponents.Gearbox;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
@@ -18,20 +19,25 @@ public class DriveTrain extends Subsystem implements In, Out {
 
     private Gearbox left, right;
     private Encoder encoder;
+    private DigitalInput arrivedLeft, arrivedRight;
     private double wheelDiameter;
 
-    public DriveTrain(Gearbox left, Gearbox right, Encoder encoder, double wheelDiameter) {
+    public DriveTrain(Gearbox left, Gearbox right, Encoder encoder, DigitalInput arrivedLeft, DigitalInput arrivedRight, double wheelDiameter) {
         this.left = left;
         this.right = right;
         this.encoder = encoder;
+        this.arrivedLeft = arrivedLeft;
+        this.arrivedRight = arrivedRight;
         this.wheelDiameter = wheelDiameter;
-        encoder.start();
     }
 
-    public DriveTrain(int frontLeftPort, int backLeftPort, int frontRightPort, int backRightPort, int encoderPort1, int encoderPort2, double wheelDiameter) {
-        this(new Gearbox(frontLeftPort, backLeftPort), new Gearbox(frontRightPort, backRightPort), new Encoder(encoderPort1, encoderPort2), wheelDiameter);
-    }
+    public DriveTrain(int frontLeftPort, int backLeftPort, int frontRightPort, int backRightPort, int encoderPort1, int encoderPort2, int arrivedLeftPort, int arrivedRightPort, double wheelDiameter) {
+        this(new Gearbox(frontLeftPort, backLeftPort), new Gearbox(frontRightPort, backRightPort),
+                new Encoder(encoderPort1, encoderPort2),
+                new DigitalInput(arrivedLeftPort), new DigitalInput(arrivedRightPort),
+                wheelDiameter);
 
+    }
 
     public void twoJoystickDrive(double leftSpeed, double rightSpeed) {
         left.setSpeed(leftSpeed);
@@ -53,7 +59,7 @@ public class DriveTrain extends Subsystem implements In, Out {
     }
 
     public double get() {
-        return (encoder.get()/RobotMap.ENCODER_TICKS_IN_CYCLE) * (Math.PI * wheelDiameter);
+        return (encoder.get() / RobotMap.ENCODER_TICKS_IN_CYCLE) * (Math.PI * wheelDiameter);
     }
 
     public void set(double speed) {
