@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import driveComponents.Gearbox;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.drive.TwoJoystickDrive;
 
 /**
@@ -52,7 +53,7 @@ public class DriveTrain extends Subsystem implements In, Out {
     }
 
     public double get() {
-        return encoder.get() * (Math.PI * wheelDiameter);
+        return (encoder.get()/RobotMap.ENCODER_TICKS_IN_CYCLE) * (Math.PI * wheelDiameter);
     }
 
     public void set(double speed) {

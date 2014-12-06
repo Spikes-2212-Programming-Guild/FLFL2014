@@ -41,5 +41,6 @@ public class RobotMap {
     public static final double DRIVER_KI = 0;
     public static final double DRIVER_KD = 0;
     public static final long DRIVER_DT = 0;
+    public static final int ENCODER_TICKS_IN_CYCLE = 0;
 
 }
