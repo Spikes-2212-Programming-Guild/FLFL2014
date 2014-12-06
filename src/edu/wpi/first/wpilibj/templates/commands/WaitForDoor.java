@@ -14,13 +14,12 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
 public class WaitForDoor extends CommandBase {
     
     public WaitForDoor() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
         requires(door);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        setTimeout(RobotMap.SLEEP_BETWEEN_DOOR_OPEN_AND_CLOSE/1000);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -29,12 +28,7 @@ public class WaitForDoor extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        try {
-            Thread.sleep(RobotMap.SLEEP_BETWEEN_DOOR_OPEN_AND_CLOSE);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-        return true;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true
