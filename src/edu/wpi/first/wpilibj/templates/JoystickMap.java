@@ -31,4 +31,7 @@ public class JoystickMap {
     static final Button TANK_STRAIGHT = new JoystickButton(driveRight, 1);
     static final Button TANK_ROTATE = new JoystickButton(driveRight, 2);
     
+    static final Button BLOCK_TUBES = new JoystickButton(navJoystick, 6);
+    static final Button UNBLOCK_TUBES = new JoystickButton(navJoystick, 7);
+    
 }

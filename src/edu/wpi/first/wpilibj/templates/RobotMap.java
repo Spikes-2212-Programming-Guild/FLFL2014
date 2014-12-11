@@ -32,9 +32,9 @@ public class RobotMap {
     public static final int ELEVATOR_BOTTOM_DI_PORT = 8;
     public static final int ELEVATOR_LEFT_WHEEL_PORT = 5;
     public static final int ELEVATOR_RIGHT_WHEEL_PORT = 6;
-    public static final int BLOCKER_RELAY_PORT;
-    public static final int BLOCKER_TOP_DI_PORT;
-    public static final int BLOCKER_BOTTOM_DI_PORT;
+    public static final int BLOCKER_RELAY_PORT = -1;
+    public static final int BLOCKER_TOP_DI_PORT = -1;
+    public static final int BLOCKER_BOTTOM_DI_PORT = -1;
 
 //    door
     public static final int DOOR_RELAY_PORT = 9;
