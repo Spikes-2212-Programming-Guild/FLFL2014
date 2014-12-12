@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.templates.commands.elevator.CloseDoor;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorDown;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorUp;
 import edu.wpi.first.wpilibj.templates.commands.elevator.OpenDoor;
+import edu.wpi.first.wpilibj.templates.commands.elevator.ScoreTubes;
 import edu.wpi.first.wpilibj.templates.commands.elevator.UnblockTubes;
 
 /**
@@ -51,6 +52,7 @@ public class OI extends JoystickMap {
         TANK_ROTATE.whileHeld(new DriveRotate());
         BLOCK_TUBES.whenPressed(new BlockTubes());
         UNBLOCK_TUBES.whenPressed(new UnblockTubes());
+        SCORE_TUBES.whenPressed(new ScoreTubes());
     }
 
     public double getLeftX() {

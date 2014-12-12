@@ -34,4 +34,6 @@ public class JoystickMap {
     static final Button BLOCK_TUBES = new JoystickButton(navJoystick, 6);
     static final Button UNBLOCK_TUBES = new JoystickButton(navJoystick, 7);
     
+    static final Button SCORE_TUBES = new JoystickButton(navJoystick, 8);
+    
 }
