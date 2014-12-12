@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.commands.PIDdrive;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorUp;
+import edu.wpi.first.wpilibj.templates.commands.elevator.ProtectedElevatorUp;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ScoreTubes;
 import edu.wpi.first.wpilibj.templates.commands.imageProcessing.WriteImage;
 
@@ -18,7 +19,7 @@ public class AutonoumsCommand extends CommandGroup {
 
     public AutonoumsCommand() {
         addSequential(new WriteImage());
-        addParallel(new ElevatorUp());
+        addParallel(new ProtectedElevatorUp());
         addSequential(new DriveTo());
         addSequential(new ScoreTubes());
     }

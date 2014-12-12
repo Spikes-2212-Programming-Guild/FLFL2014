@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.templates.commands.elevator.CloseDoor;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorDown;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorUp;
 import edu.wpi.first.wpilibj.templates.commands.elevator.OpenDoor;
+import edu.wpi.first.wpilibj.templates.commands.elevator.ProtectedElevatorUp;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ScoreTubes;
 import edu.wpi.first.wpilibj.templates.commands.elevator.UnblockTubes;
 
@@ -22,7 +23,6 @@ public class OI extends JoystickMap {
     // number it is.
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
-
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if
     // you want to build a customized operator interface.
@@ -42,9 +42,8 @@ public class OI extends JoystickMap {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-    
     public OI() {
-        ELEVATOR_UP.whenPressed(new ElevatorUp());
+        ELEVATOR_UP.whenPressed(new ProtectedElevatorUp());
         ELEVATOR_DOWN.whenPressed(new ElevatorDown());
         DOOR_OPEN.whenPressed(new OpenDoor());
         DOOR_CLOSE.whenPressed(new CloseDoor());
@@ -62,7 +61,7 @@ public class OI extends JoystickMap {
     public double getLeftY() {
         return driveLeft.getY();
     }
-    
+
     public double getRightX() {
         return driveRight.getX();
     }

@@ -16,12 +16,10 @@ import edu.wpi.first.wpilibj.templates.commands.WaitForDoor;
 public class ScoreTubes extends CommandGroup {
 
     public ScoreTubes() {
-        addParallel(new BlockTubes());
-        addSequential(new ElevatorUp());
+        addSequential(new ProtectedElevatorUp());
         addSequential(new OpenDoor());
         addSequential(new WaitForDoor());
         addSequential(new CloseDoor());
-        addParallel(new UnblockTubes());
         addSequential(new ElevatorDown());
     }
 
