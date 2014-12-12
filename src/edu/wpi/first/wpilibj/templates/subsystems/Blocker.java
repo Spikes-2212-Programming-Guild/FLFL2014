@@ -16,8 +16,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Blocker extends Subsystem{
     
     Relay blockerRelay;
-    DigitalInput blockerTop;//asumed that return true if the Blocker blocks
-    DigitalInput blockerBottom;//asumed that return true if the Blocker don't blocks
+    DigitalInput blockerTop; // assumed true if the Blocker blocks
+    DigitalInput blockerBottom; // assumed true if the Blocker doesn't block
 
     public Blocker(Relay blockerRelay, DigitalInput blockerTop, DigitalInput blockerBottom) {
         this.blockerRelay = blockerRelay;
