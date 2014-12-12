@@ -15,10 +15,12 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  * @author eyal
  */
 public class Elevator extends Subsystem {
-    private DigitalInput top = new DigitalInput(RobotMap.ELEVATOR_TOP_DI_PORT);
-    private DigitalInput bottom = new DigitalInput(RobotMap.ELEVATOR_BOTTOM_DI_PORT);    
+    private DigitalInput top = new DigitalInput(RobotMap.ELEVATOR_TOP_DI_PORT);//asumed that return ture if the elevatot is up
+    private DigitalInput bottom = new DigitalInput(RobotMap.ELEVATOR_BOTTOM_DI_PORT);//asimed that return ture if elevator is down
     private Relay rightWheel, leftWheel;
     
+    
+    //TOCHACK: there is tow Relays on the robot.
     public Elevator(Relay leftWheel, Relay rightWheel){
         this.leftWheel=leftWheel;
         this.rightWheel=rightWheel;

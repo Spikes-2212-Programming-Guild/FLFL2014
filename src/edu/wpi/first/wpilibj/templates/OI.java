@@ -2,10 +2,13 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveRotate;
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveStraight;
+import edu.wpi.first.wpilibj.templates.commands.elevator.BlockTubes;
 import edu.wpi.first.wpilibj.templates.commands.elevator.CloseDoor;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorDown;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorUp;
 import edu.wpi.first.wpilibj.templates.commands.elevator.OpenDoor;
+import edu.wpi.first.wpilibj.templates.commands.elevator.ScoreTubes;
+import edu.wpi.first.wpilibj.templates.commands.elevator.UnblockTubes;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -47,6 +50,9 @@ public class OI extends JoystickMap {
         DOOR_CLOSE.whenPressed(new CloseDoor());
         TANK_STRAIGHT.whileHeld(new DriveStraight());
         TANK_ROTATE.whileHeld(new DriveRotate());
+        BLOCK_TUBES.whenPressed(new BlockTubes());
+        UNBLOCK_TUBES.whenPressed(new UnblockTubes());
+        SCORE_TUBES.whenPressed(new ScoreTubes());
     }
 
     public double getLeftX() {

@@ -16,8 +16,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Door extends Subsystem {
 
     private Relay doorRelay;
-    private DigitalInput doorTop;
-    private DigitalInput doorBottom;
+    private DigitalInput doorTop;//asumed that return true if the door is closed
+    private DigitalInput doorBottom;//asumed that return true if the door is closed
 
     public Door(Relay doorRelay, DigitalInput doorTop, DigitalInput doorBottom) {
         this.doorRelay = doorRelay;

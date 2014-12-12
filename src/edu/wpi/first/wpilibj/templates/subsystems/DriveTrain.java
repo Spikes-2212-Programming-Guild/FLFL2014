@@ -40,14 +40,16 @@ public class DriveTrain extends Subsystem implements In, Out {
     }
 
     public void twoJoystickDrive(double leftSpeed, double rightSpeed) {
-//        if not arrived at left or not moving forward
-        if (!arrivedLeft.get() || leftSpeed < 0) {
+        // if not arrived at left or not moving forward
+        if (!arrivedLeft.get() || leftSpeed < 0)
             left.setSpeed(leftSpeed);
-        }
-//        if not arrived at right or not moving forward
-        if (!arrivedRight.get() || rightSpeed > 0) {
+        else
+            left.setSpeed(0);
+        // if not arrived at right or not moving forward
+        if (!arrivedRight.get() || rightSpeed > 0)
             right.setSpeed(rightSpeed);
-        }
+        else
+            right.setSpeed(0);
     }
 
     public void straight(double speed) {
