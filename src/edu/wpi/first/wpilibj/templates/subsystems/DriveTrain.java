@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.templates.commands.drive.TwoJoystickDrive;
  *
  * @author Developer
  */
-public class DriveTrain extends Subsystem implements In {
+public class DriveTrain extends Subsystem {
 
     private Gearbox left, right;
     private Encoder encoderRight;
@@ -120,10 +120,6 @@ public class DriveTrain extends Subsystem implements In {
                 left.setSpeed(output);
             }
         };
-    }
-
-    public void set(double speed) {
-        protectedStraight(speed);
     }
 
 }

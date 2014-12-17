@@ -16,7 +16,8 @@ public class DriveTo extends CommandBase {
     
     public DriveTo() {
         requires(driveTrain);
-        requires(drivePID);
+        requires(drivePIDRight);
+        requires(drivePIDLeft);
         
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -29,12 +30,13 @@ public class DriveTo extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        drivePID.doPID();
+        drivePIDRight.doPID();
+        drivePIDLeft.doPID();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return drivePID.hasArrived() || isTimedOut();
+        return (drivePIDLeft.hasArrived() && drivePIDRight.hasArrived()) || isTimedOut();
     }
 
     // Called once after isFinished returns true
