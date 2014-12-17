@@ -21,7 +21,7 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void execute() {
-        driveTrain.twoJoystickDrive(oi.getLeftY(), oi.getRightY());
+        driveTrain.twoJoystickDrive(oi.getLeftY(), -oi.getRightY());
     }
 
     protected boolean isFinished() {

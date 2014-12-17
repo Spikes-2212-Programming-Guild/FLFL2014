@@ -5,37 +5,35 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.elevator;
 
-import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
- * @author eyal
+ * @author obama
  */
-public class ElevatorUp extends CommandBase{
-    
-    public ElevatorUp(){
-        requires(elevator);
+public class UnblockTubes extends CommandBase{
+
+    public UnblockTubes() {
+        requires(blocker);
     }
     
     protected void initialize() {
-        setTimeout(RobotMap.ELEVATOR_UP_TIMEOUT);
     }
 
     protected void execute() {
-        elevator.goUp();
+        blocker.unblock();
+    }
+
+    protected boolean isFinished() {
+       return blocker.isNotBlocking();
     }
 
     protected void end() {
-        elevator.stop();
+        blocker.stop();
     }
-    
-    public void interrupted(){
+
+    protected void interrupted() {
         end();
     }
-      
-    public boolean isFinished() {
-       return elevator.isUp();
-    } 
     
 }

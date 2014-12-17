@@ -6,7 +6,7 @@
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
@@ -15,35 +15,36 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  * @author eyal
  */
 public class Elevator extends Subsystem {
-    private DigitalInput top = new DigitalInput(RobotMap.ELEVATOR_TOP_DI_PORT);
-    private DigitalInput bottom = new DigitalInput(RobotMap.ELEVATOR_BOTTOM_DI_PORT);    
-    private Relay rightWheel, leftWheel;
+
+    private DigitalInput top;
+    private DigitalInput bottom;
+    private Jaguar wheel;
     
-    public Elevator(Relay leftWheel, Relay rightWheel){
-        this.leftWheel=leftWheel;
-        this.rightWheel=rightWheel;
+    
+    //TOCHACK: there is tow Relays on the robot.
+    public Elevator(Jaguar wheel, DigitalInput top, DigitalInput bottom){
+        this.wheel = wheel;
+        this.top = top;
+        this.bottom = bottom;
     }
     
-    public Elevator(int leftWheelPort, int rightWheelPort){
-        this(new Relay(leftWheelPort), new Relay(rightWheelPort));
+    public Elevator(int wheelPort, int topDIPort, int bottomDIPort){
+        this(new Jaguar(wheelPort), new DigitalInput(topDIPort), new DigitalInput(bottomDIPort));
     }
     
     public void goUp() {
-        rightWheel.set(Relay.Value.kForward);
-        leftWheel.set(Relay.Value.kForward);
+        wheel.set(RobotMap.ELEVATOR_UP_SPEED);
     }
 
     public void goDown() {
-        rightWheel.set(Relay.Value.kReverse);
-        leftWheel.set(Relay.Value.kReverse);
+        wheel.set(RobotMap.ELEVATOR_DOWN_SPEED);
     }
 
     protected void initDefaultCommand() {
     }
 
     public void stop() {
-        rightWheel.set(Relay.Value.kOff);
-        leftWheel.set(Relay.Value.kOff);        
+        wheel.set(0);
     }
     
     public boolean isUp() {
@@ -51,7 +52,7 @@ public class Elevator extends Subsystem {
     }
     
     public boolean isDown() {
-        return bottom.get();
+        return !bottom.get();
     }
     
 }

@@ -10,32 +10,32 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
- * @author eyal
+ * @author obama
  */
-public class ElevatorUp extends CommandBase{
+public class BlockTubes extends CommandBase{
     
-    public ElevatorUp(){
-        requires(elevator);
+    public BlockTubes(){
+        requires(blocker);
     }
     
     protected void initialize() {
-        setTimeout(RobotMap.ELEVATOR_UP_TIMEOUT);
+        setTimeout(RobotMap.BLOCKER_TIMEOUT);
     }
 
     protected void execute() {
-        elevator.goUp();
+       blocker.block();
+    }
+
+    protected boolean isFinished() {
+        return blocker.isBlocking() || isTimedOut();
     }
 
     protected void end() {
-        elevator.stop();
+        blocker.stop();
     }
-    
-    public void interrupted(){
+
+    protected void interrupted() {
         end();
     }
-      
-    public boolean isFinished() {
-       return elevator.isUp();
-    } 
     
 }

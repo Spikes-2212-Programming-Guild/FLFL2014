@@ -5,6 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.PIDdrive;
 
+import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -23,6 +24,7 @@ public class DriveTo extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        setTimeout(RobotMap.PID_TIMEOUT);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -32,7 +34,7 @@ public class DriveTo extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return drivePID.hasArrived();
+        return drivePID.hasArrived() || isTimedOut();
     }
 
     // Called once after isFinished returns true
