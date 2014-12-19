@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.templates.commands.drive.TwoJoystickDrive;
  *
  * @author Developer
  */
-public class DriveTrain extends Subsystem {
+public class DriveTrain extends Subsystem implements In, Out {
 
     private Gearbox left, right;
     private Encoder encoderRight;
@@ -86,47 +86,19 @@ public class DriveTrain extends Subsystem {
         setDefaultCommand(new TwoJoystickDrive());
     }
 
-    public In getRightInput() {
-        return new In() {
-
-            public double get() {
-                return (encoderRight.get() / RobotMap.ENCODER_TICKS_IN_CYCLE) * (Math.PI * wheelDiameter);
-            }
-        };
-    }
-    
-    public In getLeftInput(){
-        return new In() {
-
-            public double get() {
-                return (encoderLeft.get() / RobotMap.ENCODER_TICKS_IN_CYCLE) * (Math.PI * wheelDiameter);
-            }
-        };
-    }
-    
-    public Out getRightOutput(){
-        return new Out() {
-
-            public void set(double output) {
-                right.setSpeed(output);
-            }
-        };
-    }
-    
-    public Out getLeftOutput(){
-        return new Out() {
-
-            public void set(double output) {
-                left.setSpeed(output);
-            }
-        };
-    }
-    
     public void goBackALittle() {
         long time = System.currentTimeMillis();
         long currentTime = time;
         while(currentTime - time < RobotMap.A_LITTLE_BACKWARDS_TIMEOUT)
             straight(-0.2);
+    }
+
+    public double get() {
+        return (encoderRight.get() / RobotMap.ENCODER_TICKS_IN_CYCLE) * (Math.PI * wheelDiameter);
+    }
+
+    public void set(double output) {
+        protectedStraight(output);
     }
 
 }
