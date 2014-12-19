@@ -87,10 +87,10 @@ public class DriveTrain extends Subsystem implements PIDIn, PIDOut {
     }
 
     public void goBackALittle() {
-        long time = System.currentTimeMillis();
-        long currentTime = time;
-        while(currentTime - time < RobotMap.A_LITTLE_BACKWARDS_TIMEOUT)
+        long currentTime = System.currentTimeMillis();
+        while (currentTime - System.currentTimeMillis() < RobotMap.A_LITTLE_BACKWARDS_TIMEOUT) {
             straight(-0.2);
+        }
     }
 
     public double get() {
