@@ -26,13 +26,17 @@ public class DriveStraight extends CommandBase {
     }
 
     protected boolean isFinished() {
+        //        if aligning and arrived on both sides
+        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+            return driveTrain.arrivedLeft() && driveTrain.arrivedRight();
+        }
         return false;
     }
 
     protected void end() {
         if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
             driveTrain.goBackALittle();
-        } 
+        }
         driveTrain.straight(0);
     }
 
