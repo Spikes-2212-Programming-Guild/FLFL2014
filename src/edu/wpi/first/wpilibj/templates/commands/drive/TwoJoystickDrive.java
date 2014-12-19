@@ -5,6 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.drive;
 
+import edu.wpi.first.wpilibj.templates.JoystickMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -16,12 +17,16 @@ public class TwoJoystickDrive extends CommandBase {
     public TwoJoystickDrive() {
         requires(driveTrain);
     }
-    
+
     protected void initialize() {
     }
 
     protected void execute() {
-        driveTrain.twoJoystickDrive(oi.getLeftY(), oi.getRightY());
+        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+        //    driveTrain.protectedTwoJoystickDrive(oi.getLeftY(), -oi.getRightY());
+        //} else {
+            driveTrain.twoJoystickDrive(oi.getLeftY(), -oi.getRightY());
+        //}
     }
 
     protected boolean isFinished() {
@@ -29,11 +34,13 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void end() {
+        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+        //    driveTrain.goBackALittle();
+        //}
         driveTrain.twoJoystickDrive(0, 0);
     }
 
     protected void interrupted() {
         end();
     }
-    
 }

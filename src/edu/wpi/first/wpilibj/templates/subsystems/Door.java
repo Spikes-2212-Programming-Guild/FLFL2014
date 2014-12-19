@@ -17,7 +17,7 @@ public class Door extends Subsystem {
 
     private Relay doorRelay;
     private DigitalInput doorTop;//asumed that return true if the door is closed
-    private DigitalInput doorBottom;//asumed that return true if the door is closed
+    private DigitalInput doorBottom;//asumed that return true if the door is open
 
     public Door(Relay doorRelay, DigitalInput doorTop, DigitalInput doorBottom) {
         this.doorRelay = doorRelay;
@@ -42,11 +42,11 @@ public class Door extends Subsystem {
     }
 
     public boolean isOpen() {
-        return doorBottom.get();
+        return !doorBottom.get();
     }
     
     public boolean isClosed() {
-        return doorTop.get();
+        return !doorTop.get();
     }
     
     protected void initDefaultCommand() {

@@ -1,6 +1,5 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.templates.OI;
@@ -22,11 +21,13 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     // Create a single static instance of all of your subsystems    
-    public static final DriveTrain driveTrain = new DriveTrain(RobotMap.FRONT_LEFT_TALON, RobotMap.BACK_LEFT_TALON, RobotMap.FRONT_RIGHT_TALON, RobotMap.BACK_RIGHT_TALON, RobotMap.DRIVE_ENCODER_1, RobotMap.DRIVE_ENCODER_2, RobotMap.ARRIVED_LEFT_PORT, RobotMap.ARRIVED_RIGHT_PORT, RobotMap.WHEEL_DIAMETER);
+    public static final DriveTrain driveTrain = new DriveTrain(RobotMap.FRONT_LEFT_JAGUAR, RobotMap.BACK_LEFT_JAGUAR, RobotMap.FRONT_RIGHT_JAGUAR, RobotMap.BACK_RIGHT_JAGUAR, RobotMap.DRIVE_ENCODER_RIGHT_1, RobotMap.DRIVE_ENCODER_RIGHT_2, RobotMap.DRIVE_ENCODER_LEFT_1, RobotMap.DRIVE_ENCODER_LEFT_2, RobotMap.ARRIVED_LEFT_PORT, RobotMap.ARRIVED_RIGHT_PORT, RobotMap.WHEEL_DIAMETER);
     public static final Door door = new Door(RobotMap.DOOR_RELAY_PORT, RobotMap.DOOR_TOP_DI_PORT, RobotMap.DOOR_BOTTOM_DI_PORT);
-    public static final Elevator elevator = new Elevator(RobotMap.ELEVATOR_LEFT_WHEEL_PORT, RobotMap.ELEVATOR_RIGHT_WHEEL_PORT);
+    public static final Elevator elevator = new Elevator(RobotMap.ELEVATOR_WHEEL_PORT, RobotMap.ELEVATOR_TOP_DI_PORT, RobotMap.ELEVATOR_BOTTOM_DI_PORT);
     public static final PID drivePID = new PID(RobotMap.AUTONOMOUS_DRIVE_DESTINATION, RobotMap.DRIVER_KP, RobotMap.DRIVER_KI, RobotMap.DRIVER_KD, RobotMap.DRIVER_DT, driveTrain, driveTrain);
-    public static final Blocker blocker = new Blocker(RobotMap.BLOCKER_RELAY_PORT, RobotMap.BLOCKER_TOP_DI_PORT, RobotMap.BLOCKER_BOTTOM_DI_PORT); 
+    public static final Blocker blocker = new Blocker(RobotMap.BLOCKER_RELAY_PORT, RobotMap.BLOCKER_TOP_DI_PORT, RobotMap.BLOCKER_BOTTOM_DI_PORT);
+
+    public static boolean overriding = false;
     
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely

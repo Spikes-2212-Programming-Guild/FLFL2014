@@ -5,6 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.elevator;
 
+import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -18,6 +19,7 @@ public class CloseDoor extends CommandBase {
     }
 
     protected void initialize() {
+        setTimeout(RobotMap.DOOR_TIMEOUT);
     }
 
     protected void execute() {
@@ -25,7 +27,9 @@ public class CloseDoor extends CommandBase {
     }
 
     protected boolean isFinished() {
-        return door.isClosed();
+        if(overriding)
+            return isTimedOut();
+        return door.isClosed() || isTimedOut();
     }
 
     protected void end() {

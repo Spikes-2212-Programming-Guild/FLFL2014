@@ -4,26 +4,35 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.drive;
 
+import edu.wpi.first.wpilibj.templates.JoystickMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
  * @author Developer
  */
-public class DriveStraight extends CommandBase{
-    
-    public DriveStraight (){
-       requires(driveTrain);
+public class DriveStraight extends CommandBase {
+
+    public DriveStraight() {
+        requires(driveTrain);
     }
-    public void execute(){
-        driveTrain.straight(oi.getRightY());
+
+    public void execute() {
+        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+        //    driveTrain.protectedStraight(oi.getRightY());
+        //} else {
+            driveTrain.straight(oi.getRightY());
+        //}
     }
-    
+
     protected boolean isFinished() {
         return false;
     }
 
     protected void end() {
+        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+        //    driveTrain.goBackALittle();
+        //}
         driveTrain.straight(0);
     }
 
@@ -33,5 +42,4 @@ public class DriveStraight extends CommandBase{
 
     protected void initialize() {
     }
-
 }

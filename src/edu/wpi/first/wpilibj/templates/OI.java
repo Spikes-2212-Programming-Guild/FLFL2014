@@ -1,11 +1,11 @@
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.templates.commands.Override;
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveRotate;
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveStraight;
 import edu.wpi.first.wpilibj.templates.commands.elevator.BlockTubes;
 import edu.wpi.first.wpilibj.templates.commands.elevator.CloseDoor;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorDown;
-import edu.wpi.first.wpilibj.templates.commands.elevator.ElevatorUp;
 import edu.wpi.first.wpilibj.templates.commands.elevator.OpenDoor;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ProtectedElevatorUp;
 import edu.wpi.first.wpilibj.templates.commands.elevator.ScoreTubes;
@@ -47,11 +47,12 @@ public class OI extends JoystickMap {
         ELEVATOR_DOWN.whenPressed(new ElevatorDown());
         DOOR_OPEN.whenPressed(new OpenDoor());
         DOOR_CLOSE.whenPressed(new CloseDoor());
-        TANK_STRAIGHT.whileHeld(new DriveStraight());
-        TANK_ROTATE.whileHeld(new DriveRotate());
         BLOCK_TUBES.whenPressed(new BlockTubes());
         UNBLOCK_TUBES.whenPressed(new UnblockTubes());
         SCORE_TUBES.whenPressed(new ScoreTubes());
+        TANK_STRAIGHT.whileHeld(new DriveStraight());
+        TANK_ROTATE.whileHeld(new DriveRotate());
+        OVERRIDE_BUTTON.whileHeld(new Override());
     }
 
     public double getLeftX() {
@@ -69,5 +70,4 @@ public class OI extends JoystickMap {
     public double getRightY() {
         return driveRight.getY();
     }
-
 }

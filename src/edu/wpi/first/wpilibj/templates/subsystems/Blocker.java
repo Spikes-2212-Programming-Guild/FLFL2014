@@ -30,11 +30,11 @@ public class Blocker extends Subsystem{
     }
     
     public void block(){
-        blockerRelay.set(Relay.Value.kForward);
+        blockerRelay.set(Relay.Value.kReverse);
     }
     
     public void unblock(){
-        blockerRelay.set(Relay.Value.kReverse);
+        blockerRelay.set(Relay.Value.kForward);
     }
     
     public void stop(){
@@ -46,7 +46,7 @@ public class Blocker extends Subsystem{
     }
     
     public boolean isNotBlocking(){
-        return blockerBottom.get();
+        return !blockerBottom.get();
     }
     
     protected void initDefaultCommand() {

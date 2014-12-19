@@ -5,6 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.elevator;
 
+import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -18,6 +19,7 @@ public class ElevatorUp extends CommandBase{
     }
     
     protected void initialize() {
+        setTimeout(RobotMap.ELEVATOR_UP_TIMEOUT);
     }
 
     protected void execute() {
@@ -33,7 +35,9 @@ public class ElevatorUp extends CommandBase{
     }
       
     public boolean isFinished() {
-       return elevator.isUp();
+        if(overriding)
+            return false;
+        return elevator.isUp();
     } 
     
 }

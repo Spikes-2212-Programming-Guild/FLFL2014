@@ -13,8 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.commands.PIDdrive.AutonoumsCommand;
-
+import edu.wpi.first.wpilibj.templates.commands.AutonoumsCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -63,6 +62,25 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        // check DIs
+        if(CommandBase.elevator.isUp())
+            System.out.println("elevator up");
+        if(CommandBase.elevator.isDown())
+            System.out.println("elevator down");
+        if(CommandBase.door.isOpen())
+            System.out.println("door open");
+        if(CommandBase.door.isClosed())
+            System.out.println("door closed");
+        if(CommandBase.blocker.isBlocking())
+            System.out.println("blocking");
+        if(CommandBase.blocker.isNotBlocking())
+            System.out.println("not blocking");
+        if(CommandBase.driveTrain.arrivedLeft())
+            System.out.println("arrived left");
+        if(CommandBase.driveTrain.arrivedRight())
+            System.out.println("arrived right");
+        
     }
     
     /**
