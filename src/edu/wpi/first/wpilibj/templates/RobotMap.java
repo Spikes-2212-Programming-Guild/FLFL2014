@@ -27,8 +27,7 @@ public class RobotMap {
     public static final int DRIVE_ENCODER_LEFT_2 = 14;
     public static final int ARRIVED_LEFT_PORT = 6;
     public static final int ARRIVED_RIGHT_PORT = 5;
-    public static final double WHEEL_DIAMETER = 8*2.54;
-
+    public static final double WHEEL_DIAMETER = 8 * 2.54;
 //    elevator
     public static final int ELEVATOR_TOP_DI_PORT = 2;
     public static final int ELEVATOR_BOTTOM_DI_PORT = 3;
@@ -36,20 +35,17 @@ public class RobotMap {
     public static final double ELEVATOR_UP_SPEED = 0.5;
     public static final double ELEVATOR_DOWN_SPEED = -0.2;
     public static final int ELEVATOR_UP_TIMEOUT = 5;
-    
     // blocker
     public static final int BLOCKER_RELAY_PORT = 2;
     public static final int BLOCKER_TOP_DI_PORT = 4;
     public static final int BLOCKER_BOTTOM_DI_PORT = 10;
     public static final int BLOCKER_TIMEOUT = 2;
-
 //    door
     public static final int DOOR_RELAY_PORT = 1;
     public static final int DOOR_TOP_DI_PORT = 8;
     public static final int DOOR_BOTTOM_DI_PORT = 7;
     public static final int DOOR_TIMEOUT = 2;
     public static final long SLEEP_BETWEEN_DOOR_OPEN_AND_CLOSE = 2000;
-
 //    driving PID
     public static final double DRIVE_PID_TOLERANCE = 0;
     public static final double DRIVER_KP = 0;
@@ -57,11 +53,9 @@ public class RobotMap {
     public static final double DRIVER_KD = 0;
     public static final long DRIVER_DT = 0;
     public static final double AUTONOMOUS_DRIVE_DESTINATION = 0;
-
     public static final int ENCODER_TICKS_IN_CYCLE = 70;
     public static final int PID_TIMEOUT = 3;
     public static double BLOCKER_DELAY = 2;
     public static double DOOR_DELAY = 2;
     public static double ELEVATOR_DELAY = 5;
-
 }
