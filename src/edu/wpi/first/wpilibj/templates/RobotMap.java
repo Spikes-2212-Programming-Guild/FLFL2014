@@ -38,14 +38,14 @@ public class RobotMap {
     // blocker
     public static final int BLOCKER_RELAY_PORT = 2;
     public static final int BLOCKER_TOP_DI_PORT = 4;
-    public static final int BLOCKER_BOTTOM_DI_PORT = 10;
+    public static final int BLOCKER_BOTTOM_DI_PORT = 9;
     public static final int BLOCKER_TIMEOUT = 2;
 //    door
     public static final int DOOR_RELAY_PORT = 1;
     public static final int DOOR_TOP_DI_PORT = 8;
     public static final int DOOR_BOTTOM_DI_PORT = 7;
     public static final int DOOR_TIMEOUT = 2;
-    public static final long SLEEP_BETWEEN_DOOR_OPEN_AND_CLOSE = 2000;
+    public static final long SLEEP_BETWEEN_DOOR_OPEN_AND_CLOSE = 1300;
 //    driving PID
     public static final double DRIVE_PID_TOLERANCE = 0;
     public static final double DRIVER_KP = 0;
