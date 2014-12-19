@@ -27,6 +27,8 @@ public class BlockTubes extends CommandBase{
     }
 
     protected boolean isFinished() {
+        if(overriding)
+            return isTimedOut();
         return blocker.isBlocking() || isTimedOut();
     }
 

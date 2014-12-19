@@ -28,6 +28,8 @@ public abstract class CommandBase extends Command {
     public static final PID drivePIDLeft = new PID(RobotMap.AUTONOMOUS_DRIVE_DESTINATION, RobotMap.DRIVER_KP, RobotMap.DRIVER_KI, RobotMap.DRIVER_KD, RobotMap.DRIVER_DT, driveTrain.getLeftInput(), driveTrain.getLeftOutput());
     public static final Blocker blocker = new Blocker(RobotMap.BLOCKER_RELAY_PORT, RobotMap.BLOCKER_TOP_DI_PORT, RobotMap.BLOCKER_BOTTOM_DI_PORT);
 
+    public static boolean overriding = false;
+    
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from

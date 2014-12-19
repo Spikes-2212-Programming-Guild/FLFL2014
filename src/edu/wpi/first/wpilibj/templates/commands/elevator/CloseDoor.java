@@ -25,6 +25,8 @@ public class CloseDoor extends CommandBase {
     }
 
     protected boolean isFinished() {
+        if(overriding)
+            return false;
         return door.isClosed();
     }
 

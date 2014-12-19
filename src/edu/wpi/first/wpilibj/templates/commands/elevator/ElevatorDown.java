@@ -33,7 +33,9 @@ public class ElevatorDown extends CommandBase{
     }
       
     public boolean isFinished() {
-       return elevator.isDown();
+        if(overriding)
+            return false;
+        return elevator.isDown();
     } 
     
 }

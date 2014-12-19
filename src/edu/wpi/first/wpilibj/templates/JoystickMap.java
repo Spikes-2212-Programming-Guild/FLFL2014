@@ -39,4 +39,6 @@ public class JoystickMap {
     
     public static final Button SCORE_TUBES = new JoystickButton(navJoystick, 9);
     
+    public static final Button OVERRIDE_BUTTON = new JoystickButton(navJoystick, 12);
+    
 }

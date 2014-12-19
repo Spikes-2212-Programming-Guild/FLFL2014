@@ -1,5 +1,6 @@
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.templates.commands.Override;
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveRotate;
 import edu.wpi.first.wpilibj.templates.commands.drive.DriveStraight;
 import edu.wpi.first.wpilibj.templates.commands.elevator.BlockTubes;
@@ -51,6 +52,7 @@ public class OI extends JoystickMap {
         SCORE_TUBES.whenPressed(new ScoreTubes());
         TANK_STRAIGHT.whileHeld(new DriveStraight());
         TANK_ROTATE.whileHeld(new DriveRotate());
+        OVERRIDE_BUTTON.whileHeld(new Override());
     }
 
     public double getLeftX() {

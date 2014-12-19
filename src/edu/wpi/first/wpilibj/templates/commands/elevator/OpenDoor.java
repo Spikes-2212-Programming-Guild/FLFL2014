@@ -27,6 +27,8 @@ public class OpenDoor extends CommandBase{
     }
 
     protected boolean isFinished() {
+        if(overriding)
+            return isTimedOut();
         return door.isOpen() || isTimedOut();
     }
 

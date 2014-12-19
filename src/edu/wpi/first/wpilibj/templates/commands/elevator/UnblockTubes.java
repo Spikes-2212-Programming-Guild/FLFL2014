@@ -25,7 +25,9 @@ public class UnblockTubes extends CommandBase{
     }
 
     protected boolean isFinished() {
-       return blocker.isNotBlocking();
+        if(overriding)
+            return false;
+        return blocker.isNotBlocking();
     }
 
     protected void end() {

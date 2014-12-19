@@ -42,20 +42,20 @@ public class DriveTrain extends Subsystem {
     }
 
     public void twoJoystickDrive(double leftSpeed, double rightSpeed) {
-        left.setSpeed(-leftSpeed);
-        right.setSpeed(-rightSpeed);
+        left.setSpeed(leftSpeed);
+        right.setSpeed(rightSpeed);
     }
 
     public void protectedTwoJoystickDrive(double leftSpeed, double rightSpeed) {
         // if not arrived at left or not moving forward
         if (!arrivedLeft.get() || leftSpeed < 0) {
-            left.setSpeed(-leftSpeed);
+            left.setSpeed(leftSpeed);
         } else {
             left.setSpeed(0);
         }
         // if not arrived at right or not moving forward
         if (!arrivedRight.get() || rightSpeed > 0) {
-            right.setSpeed(-rightSpeed);
+            right.setSpeed(rightSpeed);
         } else {
             right.setSpeed(0);
         }
