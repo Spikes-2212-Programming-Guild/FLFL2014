@@ -11,25 +11,28 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
  *
  * @author Developer
  */
-public class DriveStraight extends CommandBase{
-    
-    public DriveStraight (){
-       requires(driveTrain);
+public class DriveStraight extends CommandBase {
+
+    public DriveStraight() {
+        requires(driveTrain);
     }
-    public void execute(){
-        if(JoystickMap.RIGHT_ALIGN.get())  {
+
+    public void execute() {
+        if (JoystickMap.RIGHT_ALIGN.get()) {
             driveTrain.protectedStraight(oi.getRightY());
-            driveTrain.goBackALittle();
-        }
-        else
+        } else {
             driveTrain.straight(oi.getRightY());
+        }
     }
-    
+
     protected boolean isFinished() {
         return false;
     }
 
     protected void end() {
+        if (JoystickMap.RIGHT_ALIGN.get()) {
+            driveTrain.goBackALittle();
+        }
         driveTrain.straight(0);
     }
 
@@ -39,5 +42,4 @@ public class DriveStraight extends CommandBase{
 
     protected void initialize() {
     }
-
 }
