@@ -30,6 +30,8 @@ public class DriveTo extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         drivePID.doPID();
+        // This is only used in PID at the autonomous periodic
+        driveTrain.goBackALittle();
     }
 
     // Make this return true when this Command no longer needs to run execute()
