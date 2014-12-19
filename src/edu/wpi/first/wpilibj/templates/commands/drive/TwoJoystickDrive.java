@@ -22,8 +22,10 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void execute() {
-        if(JoystickMap.LEFT_TRIGGER.get() && JoystickMap.RIGHT_TRIGGER.get())
+        if(JoystickMap.LEFT_ALIGN.get() && JoystickMap.RIGHT_ALIGN.get()) {
             driveTrain.protectedTwoJoystickDrive(oi.getLeftY(), -oi.getRightY());
+            driveTrain.goBackALittle();
+        }
         else
             driveTrain.twoJoystickDrive(oi.getLeftY(), -oi.getRightY());
     }

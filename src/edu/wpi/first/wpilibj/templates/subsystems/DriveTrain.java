@@ -121,5 +121,12 @@ public class DriveTrain extends Subsystem {
             }
         };
     }
+    
+    public void goBackALittle() {
+        long time = System.currentTimeMillis();
+        long currentTime = time;
+        while(currentTime - time < RobotMap.A_LITTLE_BACKWARDS_TIMEOUT)
+            straight(-0.2);
+    }
 
 }

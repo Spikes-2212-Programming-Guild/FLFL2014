@@ -58,4 +58,6 @@ public class RobotMap {
     public static double BLOCKER_DELAY = 1;
     public static double DOOR_DELAY = 2;
     public static double ELEVATOR_DELAY = 5;
+    public static long A_LITTLE_BACKWARDS_TIMEOUT = 500;
+    
 }

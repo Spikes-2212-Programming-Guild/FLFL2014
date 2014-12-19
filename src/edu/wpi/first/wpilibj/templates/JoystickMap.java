@@ -23,8 +23,8 @@ public class JoystickMap {
     public static final Joystick driveRight = new Joystick(JOYSTICK_DRIVE_RIGHT_PORT);
     public static final Joystick navJoystick = new Joystick(JOYSTICK_NAV_PORT);
     
-    public static final Button LEFT_TRIGGER = new JoystickButton(driveLeft, 1);
-    public static final Button RIGHT_TRIGGER = new JoystickButton(driveRight, 1);
+    public static final Button LEFT_ALIGN = new JoystickButton(driveLeft, 2);
+    public static final Button RIGHT_ALIGN = new JoystickButton(driveRight, 2);
     
     public static final Button ELEVATOR_UP = new JoystickButton(navJoystick, 1);
     public static final Button ELEVATOR_DOWN = new JoystickButton(navJoystick, 2);

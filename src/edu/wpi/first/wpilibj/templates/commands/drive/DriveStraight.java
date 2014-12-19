@@ -17,8 +17,10 @@ public class DriveStraight extends CommandBase{
        requires(driveTrain);
     }
     public void execute(){
-        if(JoystickMap.LEFT_TRIGGER.get() && JoystickMap.RIGHT_TRIGGER.get())
+        if(JoystickMap.RIGHT_ALIGN.get())  {
             driveTrain.protectedStraight(oi.getRightY());
+            driveTrain.goBackALittle();
+        }
         else
             driveTrain.straight(oi.getRightY());
     }
