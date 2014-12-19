@@ -4,6 +4,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.drive;
 
+import edu.wpi.first.wpilibj.templates.JoystickMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -16,7 +17,10 @@ public class DriveStraight extends CommandBase{
        requires(driveTrain);
     }
     public void execute(){
-        driveTrain.straight(oi.getRightY());
+        if(JoystickMap.LEFT_TRIGGER.get() && JoystickMap.RIGHT_TRIGGER.get())
+            driveTrain.protectedStraight(oi.getRightY());
+        else
+            driveTrain.straight(oi.getRightY());
     }
     
     protected boolean isFinished() {

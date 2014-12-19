@@ -5,6 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.drive;
 
+import edu.wpi.first.wpilibj.templates.JoystickMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -21,7 +22,10 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void execute() {
-        driveTrain.twoJoystickDrive(oi.getLeftY(), -oi.getRightY());
+        if(JoystickMap.LEFT_TRIGGER.get() && JoystickMap.RIGHT_TRIGGER.get())
+            driveTrain.protectedTwoJoystickDrive(oi.getLeftY(), -oi.getRightY());
+        else
+            driveTrain.twoJoystickDrive(oi.getLeftY(), -oi.getRightY());
     }
 
     protected boolean isFinished() {
