@@ -22,11 +22,11 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void execute() {
-        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
-            driveTrain.protectedTwoJoystickDrive(oi.getLeftY(), -oi.getRightY());
-        } else {
+        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+        //    driveTrain.protectedTwoJoystickDrive(oi.getLeftY(), -oi.getRightY());
+        //} else {
             driveTrain.twoJoystickDrive(oi.getLeftY(), -oi.getRightY());
-        }
+        //}
     }
 
     protected boolean isFinished() {
@@ -34,9 +34,9 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void end() {
-        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
-            driveTrain.goBackALittle();
-        }
+        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+        //    driveTrain.goBackALittle();
+        //}
         driveTrain.twoJoystickDrive(0, 0);
     }
 

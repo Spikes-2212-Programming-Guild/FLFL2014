@@ -19,9 +19,9 @@ public class AutonoumsCommand extends CommandGroup {
 
     public AutonoumsCommand() {
         addSequential(new WriteImage());
-        addParallel(new ProtectedElevatorUp());
-        addSequential(new DriveTo());
-        addSequential(new ScoreTubes());
+        //addParallel(new ProtectedElevatorUp());
+        //addSequential(new DriveTo());
+        //addSequential(new ScoreTubes());
     }
     
 }
