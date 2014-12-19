@@ -33,7 +33,7 @@ public class RobotMap {
     public static final int ELEVATOR_BOTTOM_DI_PORT = 3;
     public static final int ELEVATOR_WHEEL_PORT = 3;
     public static final double ELEVATOR_UP_SPEED = 0.5;
-    public static final double ELEVATOR_DOWN_SPEED = -0.2;
+    public static final double ELEVATOR_DOWN_SPEED = -0.4;
     public static final int ELEVATOR_UP_TIMEOUT = 5;
     public static double ELEVATOR_DOWN_TIMEOUT = 5;
 
