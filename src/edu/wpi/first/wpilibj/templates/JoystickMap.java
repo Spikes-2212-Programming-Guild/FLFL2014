@@ -23,17 +23,17 @@ public class JoystickMap {
     static final Joystick driveRight = new Joystick(JOYSTICK_DRIVE_RIGHT_PORT);
     static final Joystick navJoystick = new Joystick(JOYSTICK_NAV_PORT);
     
-    static final Button ELEVATOR_UP = new JoystickButton(navJoystick, 2);
-    static final Button ELEVATOR_DOWN = new JoystickButton(navJoystick, 3);
-    static final Button DOOR_OPEN = new JoystickButton(navJoystick, 4);
-    static final Button DOOR_CLOSE = new JoystickButton(navJoystick, 5);
+    static final Button ELEVATOR_UP = new JoystickButton(navJoystick, 1);
+    static final Button ELEVATOR_DOWN = new JoystickButton(navJoystick, 2);
+    static final Button DOOR_OPEN = new JoystickButton(navJoystick, 5);
+    static final Button DOOR_CLOSE = new JoystickButton(navJoystick, 3);
     
     static final Button TANK_STRAIGHT = new JoystickButton(driveRight, 1);
     static final Button TANK_ROTATE = new JoystickButton(driveRight, 2);
     
     static final Button BLOCK_TUBES = new JoystickButton(navJoystick, 6);
-    static final Button UNBLOCK_TUBES = new JoystickButton(navJoystick, 7);
+    static final Button UNBLOCK_TUBES = new JoystickButton(navJoystick, 4);
     
-    static final Button SCORE_TUBES = new JoystickButton(navJoystick, 8);
+    static final Button SCORE_TUBES = new JoystickButton(navJoystick, 9);
     
 }
