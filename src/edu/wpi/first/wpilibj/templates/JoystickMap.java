@@ -32,7 +32,7 @@ public class JoystickMap {
     public static final Button DOOR_CLOSE = new JoystickButton(navJoystick, 3);
     
     public static final Button TANK_STRAIGHT = new JoystickButton(driveRight, 1);
-    public static final Button TANK_ROTATE = new JoystickButton(driveRight, 2);
+    public static final Button TANK_ROTATE = new JoystickButton(driveRight, 3);
     
     public static final Button BLOCK_TUBES = new JoystickButton(navJoystick, 6);
     public static final Button UNBLOCK_TUBES = new JoystickButton(navJoystick, 4);
