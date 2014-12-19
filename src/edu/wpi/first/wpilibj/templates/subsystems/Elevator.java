@@ -52,7 +52,7 @@ public class Elevator extends Subsystem {
     }
     
     public boolean isDown() {
-        return !bottom.get();
+        return bottom.get();
     }
     
 }
