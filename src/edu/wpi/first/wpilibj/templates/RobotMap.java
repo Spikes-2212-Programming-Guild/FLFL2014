@@ -60,5 +60,8 @@ public class RobotMap {
 
     public static final int ENCODER_TICKS_IN_CYCLE = 70;
     public static final int PID_TIMEOUT = 3;
+    public static double BLOCKER_DELAY = 2;
+    public static double DOOR_DELAY = 2;
+    public static double ELEVATOR_DELAY = 5;
 
 }
