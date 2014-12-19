@@ -30,9 +30,9 @@ public class DriveStraight extends CommandBase {
     }
 
     protected void end() {
-        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
-        //    driveTrain.goBackALittle();
-        //}
+        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+            driveTrain.goBackALittle();
+        } 
         driveTrain.straight(0);
     }
 
