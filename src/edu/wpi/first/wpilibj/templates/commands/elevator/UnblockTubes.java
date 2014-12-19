@@ -5,6 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.elevator;
 
+import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -18,6 +19,7 @@ public class UnblockTubes extends CommandBase{
     }
     
     protected void initialize() {
+        setTimeout(RobotMap.BLOCKER_TIMEOUT);
     }
 
     protected void execute() {
@@ -26,8 +28,8 @@ public class UnblockTubes extends CommandBase{
 
     protected boolean isFinished() {
         if(overriding)
-            return false;
-        return blocker.isNotBlocking();
+            return isTimedOut();
+        return blocker.isNotBlocking() || isTimedOut();
     }
 
     protected void end() {
