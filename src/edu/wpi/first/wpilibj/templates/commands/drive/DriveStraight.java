@@ -18,11 +18,11 @@ public class DriveStraight extends CommandBase {
     }
 
     public void execute() {
-        //if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
-        //    driveTrain.protectedStraight(oi.getRightY());
-        //} else {
+        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
+            driveTrain.protectedStraight(oi.getRightY());
+        } else {
             driveTrain.straight(oi.getRightY());
-        //}
+        }
     }
 
     protected boolean isFinished() {
