@@ -46,11 +46,11 @@ public class OI extends JoystickMap {
         ELEVATOR_DOWN.whenPressed(new ElevatorDown());
         DOOR_OPEN.whenPressed(new OpenDoor());
         DOOR_CLOSE.whenPressed(new CloseDoor());
-        TANK_STRAIGHT.whileHeld(new DriveStraight());
-        TANK_ROTATE.whileHeld(new DriveRotate());
         BLOCK_TUBES.whenPressed(new BlockTubes());
         UNBLOCK_TUBES.whenPressed(new UnblockTubes());
         SCORE_TUBES.whenPressed(new ScoreTubes());
+        TANK_STRAIGHT.whileHeld(new DriveStraight());
+        TANK_ROTATE.whileHeld(new DriveRotate());
     }
 
     public double getLeftX() {
@@ -68,5 +68,4 @@ public class OI extends JoystickMap {
     public double getRightY() {
         return driveRight.getY();
     }
-
 }
