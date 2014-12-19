@@ -17,10 +17,10 @@ public class RobotMap {
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
 //    driveTrain
-    public static final int FRONT_LEFT_JAGUAR = 9;
-    public static final int BACK_LEFT_JAGUAR = 10;
-    public static final int FRONT_RIGHT_JAGUAR = 1;
-    public static final int BACK_RIGHT_JAGUAR = 2;
+    public static final int FRONT_LEFT_JAGUAR = 1;
+    public static final int BACK_LEFT_JAGUAR = 2;
+    public static final int FRONT_RIGHT_JAGUAR = 9;
+    public static final int BACK_RIGHT_JAGUAR = 10;
     public static final int DRIVE_ENCODER_RIGHT_1 = 11;
     public static final int DRIVE_ENCODER_RIGHT_2 = 12;
     public static final int DRIVE_ENCODER_LEFT_1 = 13;
