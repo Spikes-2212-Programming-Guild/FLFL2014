@@ -22,7 +22,7 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void execute() {
-        if (JoystickMap.LEFT_ALIGN.get() && JoystickMap.RIGHT_ALIGN.get()) {
+        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
             driveTrain.protectedTwoJoystickDrive(oi.getLeftY(), -oi.getRightY());
         } else {
             driveTrain.twoJoystickDrive(oi.getLeftY(), -oi.getRightY());
@@ -34,7 +34,7 @@ public class TwoJoystickDrive extends CommandBase {
     }
 
     protected void end() {
-        if (JoystickMap.LEFT_ALIGN.get() && JoystickMap.RIGHT_ALIGN.get()) {
+        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
             driveTrain.goBackALittle();
         }
         driveTrain.twoJoystickDrive(0, 0);

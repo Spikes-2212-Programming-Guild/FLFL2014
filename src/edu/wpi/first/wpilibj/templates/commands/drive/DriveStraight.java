@@ -18,7 +18,7 @@ public class DriveStraight extends CommandBase {
     }
 
     public void execute() {
-        if (JoystickMap.RIGHT_ALIGN.get()) {
+        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
             driveTrain.protectedStraight(oi.getRightY());
         } else {
             driveTrain.straight(oi.getRightY());
@@ -30,7 +30,7 @@ public class DriveStraight extends CommandBase {
     }
 
     protected void end() {
-        if (JoystickMap.RIGHT_ALIGN.get()) {
+        if (JoystickMap.driveRight.getRawButton(JoystickMap.ALIGN_BUTTON)) {
             driveTrain.goBackALittle();
         }
         driveTrain.straight(0);
