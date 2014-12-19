@@ -57,9 +57,12 @@ public class RobotMap {
     public static final double AUTONOMOUS_DRIVE_DESTINATION = 0;
     public static final int ENCODER_TICKS_IN_CYCLE = 70;
     public static final int PID_TIMEOUT = 3;
-    public static double BLOCKER_DELAY = 1;
-    public static double DOOR_DELAY = 2;
-    public static double ELEVATOR_DELAY = 5;
-    public static long A_LITTLE_BACKWARDS_TIMEOUT = 500;
+    
+    public static final double BLOCKER_DELAY = 1;
+    public static final double DOOR_DELAY = 2;
+    public static final double ELEVATOR_DELAY = 5;
+    
+    public static final long A_LITTLE_BACKWARDS_TIMEOUT = 500;
+    public static final double A_LITTLE_BACKWARDS_SPEED = 0.2;
     
 }
