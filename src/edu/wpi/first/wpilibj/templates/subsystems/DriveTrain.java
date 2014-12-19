@@ -75,11 +75,11 @@ public class DriveTrain extends Subsystem implements In, Out {
     }
 
     public boolean arrivedLeft() {
-        return arrivedLeft.get();
+        return !arrivedLeft.get();
     }
 
     public boolean arrivedRight() {
-        return arrivedRight.get();
+        return !arrivedRight.get();
     }
 
     protected void initDefaultCommand() {
