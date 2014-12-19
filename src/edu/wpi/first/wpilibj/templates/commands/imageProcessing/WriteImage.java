@@ -16,13 +16,13 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
  */
 public class WriteImage extends CommandBase {
 
-    //private final AxisCamera camera;
-    //private boolean done;
-    //private ColorImage image;
+    private final AxisCamera camera;
+    private boolean done;
+    private ColorImage image;
     
     public WriteImage() {
-        //camera = AxisCamera.getInstance();
-        //done = false;
+        camera = AxisCamera.getInstance();
+        done = false;
     }
     
     protected void initialize() {
@@ -30,25 +30,25 @@ public class WriteImage extends CommandBase {
     }
 
     protected void execute() {
-        //try {
-        //    image = camera.getImage();
-        //    image.write("robotframe.png");
-        //} catch (Exception ex) {
-        //    ex.printStackTrace();
-        //}
-        //done = true;
+        try {
+            image = camera.getImage();
+            image.write("robotframe.png");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        done = true;
     }
 
     protected boolean isFinished() {
-        return true;//done;
+        return done;
     }
 
     protected void end() {
-        //try {
-        //    image.free();
-        //} catch (NIVisionException ex) {
-        //    ex.printStackTrace();
-        //}
+        try {
+            image.free();
+        } catch (NIVisionException ex) {
+            ex.printStackTrace();
+        }
     }
 
     protected void interrupted() {
