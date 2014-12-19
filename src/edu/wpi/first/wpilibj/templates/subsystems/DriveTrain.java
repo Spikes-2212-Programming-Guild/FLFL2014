@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.templates.commands.drive.TwoJoystickDrive;
  *
  * @author Developer
  */
-public class DriveTrain extends Subsystem implements In, Out {
+public class DriveTrain extends Subsystem implements PIDIn, PIDOut {
 
     private Gearbox left, right;
     private Encoder encoderRight;

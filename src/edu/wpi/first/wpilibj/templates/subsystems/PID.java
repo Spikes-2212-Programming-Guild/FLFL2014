@@ -17,12 +17,12 @@ public class PID extends Subsystem {
     private final double KP, KI, KD, dest;
     private double error, prevError, p, i, d;
     private final long dt;
-    private final In in;
-    private final Out out;
+    private final PIDIn in;
+    private final PIDOut out;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    public PID(double dest, double kp, double ki, double kd, long dt, In in, Out out) {
+    public PID(double dest, double kp, double ki, double kd, long dt, PIDIn in, PIDOut out) {
         this.error = this.dest = dest;
         this.KP = kp;
         this.KI = ki;

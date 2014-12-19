@@ -9,8 +9,8 @@ package edu.wpi.first.wpilibj.templates.subsystems;
  *
  * @author AtidSpikes
  */
-public interface In {
+public interface PIDOut {
     
-    public double get();
-    
+    public void set(double output);
+
 }
