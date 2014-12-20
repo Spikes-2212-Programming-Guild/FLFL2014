@@ -48,16 +48,16 @@ public class DriveTrain extends Subsystem implements PIDIn, PIDOut {
 
     public void protectedTwoJoystickDrive(double leftSpeed, double rightSpeed) {
         // if not arrived at left or not moving forward
-        if (!arrivedLeft() || leftSpeed < 0) {
-            left.setSpeed(-leftSpeed);
+        if (arrivedLeft() && leftSpeed > 0) {
+                left.setSpeed(0);
         } else {
-            left.setSpeed(0);
+            left.setSpeed(-leftSpeed);
         }
         // if not arrived at right or not moving forward
-        if (!arrivedRight() || rightSpeed < 0) {
-            right.setSpeed(-rightSpeed);
-        } else {
+        if (arrivedRight() && rightSpeed > 0) {
             right.setSpeed(0);
+        } else {
+            right.setSpeed(-rightSpeed);
         }
     }
 
