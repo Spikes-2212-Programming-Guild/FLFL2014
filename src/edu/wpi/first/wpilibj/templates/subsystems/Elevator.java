@@ -23,6 +23,7 @@ public class Elevator extends Subsystem {
     
     //TOCHACK: there is tow Relays on the robot.
     public Elevator(Jaguar wheel, DigitalInput top, DigitalInput bottom){
+        super("elevator");
         this.wheel = wheel;
         this.top = top;
         this.bottom = bottom;

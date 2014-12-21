@@ -20,6 +20,7 @@ public class Door extends Subsystem {
     private DigitalInput doorBottom;//asumed that return true if the door is open
 
     public Door(Relay doorRelay, DigitalInput doorTop, DigitalInput doorBottom) {
+        super("door");
         this.doorRelay = doorRelay;
         this.doorBottom = doorBottom;
         this.doorTop = doorTop;

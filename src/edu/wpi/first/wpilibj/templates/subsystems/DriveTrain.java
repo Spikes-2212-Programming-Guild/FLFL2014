@@ -24,6 +24,7 @@ public class DriveTrain extends Subsystem implements PIDIn, PIDOut {
     private double wheelDiameter;
 
     public DriveTrain(Gearbox left, Gearbox right, Encoder encoderRight, Encoder encoderLeft, DigitalInput arrivedLeft, DigitalInput arrivedRight, double wheelDiameter) {
+        super("driveTrain");
         this.left = left;
         this.right = right;
         this.encoderRight = encoderRight;

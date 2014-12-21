@@ -20,6 +20,7 @@ public class Blocker extends Subsystem{
     DigitalInput blockerBottom; // assumed true if the Blocker doesn't block
 
     public Blocker(Relay blockerRelay, DigitalInput blockerTop, DigitalInput blockerBottom) {
+        super("blocker");
         this.blockerRelay = blockerRelay;
         this.blockerTop = blockerTop;
         this.blockerBottom = blockerBottom;
